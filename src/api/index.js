@@ -8,8 +8,8 @@ export const fetchData = async () => {
       data: { confirmed, recovered, deaths, lastUpdate },
     } = await axios.get(url);
 
-    const ModifiedData = { confirmed, recovered, deaths, lastUpdate };
+    const modifiedData = { confirmed, recovered, deaths, lastUpdate };
 
-    return ModifiedData;
+    return modifiedData;
   } catch (error) {}
 };
