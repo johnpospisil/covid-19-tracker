@@ -15,7 +15,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     // console.log(dailyData)
 
     fetchAPI();
-  });
+  }, []);
 
   const lineChart = (
     dailyData.length 
@@ -38,6 +38,8 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     />) : null
   );
 
+  console.log(confirmed, recovered, deaths);
+
   const barChart = (
     confirmed 
       ? (
@@ -51,7 +53,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 'rgba(0, 255, 0, 0.5)',
                 'rgba(255, 0, 0, 0.5)',
               ],
-              data: [confirmed, recovered, deaths]
+              data: [confirmed.value, recovered.value, deaths.value]
             }]
           }} options={{
             legend: { display: false }, 
